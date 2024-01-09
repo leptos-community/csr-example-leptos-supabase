@@ -23,7 +23,7 @@ pub fn App() -> impl IntoView {
     view! {
         <Router>
             <Routes>
-                <Route path="/leptos_supabase_example" view=move || view! { <div>hello</div> }>
+                <Route path="/leptos_supabase_example" view=move || view! { <div>hello <Outlet/></div> }>
                     <Route
                         path="/login"
                         view=move || {
@@ -90,6 +90,7 @@ pub fn App() -> impl IntoView {
                         }
                     />
 
+                   
                 </Route>
             </Routes>
             <div id="toast" class:show=show_toast>
