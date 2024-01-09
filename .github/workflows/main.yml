@@ -1,12 +1,12 @@
-name: Deploy from routing test to GitHub Pages
+name: Deploy from main to GitHub Pages
 on:
   push:
     branches:
-      - routing_test
+      - main
 
 jobs:
   deploy:
-    name: Deploy to GitHub Pages
+    name: Deploy from main to GitHub Pages
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
