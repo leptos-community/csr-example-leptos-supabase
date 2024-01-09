@@ -1,6 +1,6 @@
-# Leptos-Supabase
+# Leptos_Supabase_Example
 
-Leptos-Supabase is a web application that uses the Leptos framework as the client and Supabase as the backend service. It demonstrates how to implement authentication with Google and email/password using Supabase.
+Leptos_Supabase_Example is a web application that uses the Leptos framework as the client and Supabase as the backend service. It demonstrates how to implement authentication with Google and email/password using Supabase.
 
 You can check out the demo site which is public for a limited time:
 https://mahdi739.github.io/leptos_supabase_example/
@@ -13,7 +13,7 @@ https://mahdi739.github.io/leptos_supabase_example/
 
 ## Deploy
 
-To deploy Leptos-Supabase, you need to:
+To deploy Leptos_Supabase_Example, you need to:
 
 - Clone this repository to your local machine.
 - Create a Supabase project and get the following environment variables:
