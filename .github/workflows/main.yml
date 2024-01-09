@@ -1,8 +1,8 @@
-name: Deploy to GitHub Pages
+name: Deploy from routing test to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - routing_test
 
 jobs:
   deploy:
