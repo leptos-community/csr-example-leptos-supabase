@@ -160,7 +160,7 @@ input[type="phone"]:user-invalid {
 
 }
 
-.primary-button:disabled  {
+.primary-button:disabled {
     filter: grayscale(100%);
     cursor: not-allowed;
     transform: scale(1) !important;
@@ -509,7 +509,7 @@ a:hover {
 
 #toast {
     opacity: 0;
-    visibility: visible;
+    /* visibility: visible; */
     min-width: 250px;
     transform: translateX(-50%);
 
@@ -523,34 +523,11 @@ a:hover {
     z-index: 1;
     left: 50%;
     margin-bottom: 50px;
-    animation: fadeout 0.5s forwards;
+    transition: all 500ms;
+    bottom: 0px;
 }
 
 #toast.show {
-    visibility: visible;
-    animation: fadein 0.5s forwards;
-}
-
-@keyframes fadein {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
-
-    to {
-        bottom: 30px;
-        opacity: 1;
-    }
-}
-
-@keyframes fadeout {
-    from {
-        bottom: 30px;
-        opacity: 1;
-    }
-
-    to {
-        bottom: 0;
-        opacity: 0;
-    }
+    bottom: 30px;
+    opacity: 1;
 }
