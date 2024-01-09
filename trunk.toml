@@ -1,4 +1,4 @@
 [build]
 release = true
 dist = "dist"
-public_url = "https://mahdi739.github.io/"
+public_url = "https://mahdi739.github.io/leptos_supabase_example/"
