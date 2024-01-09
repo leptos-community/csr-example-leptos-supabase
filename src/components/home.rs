@@ -192,7 +192,7 @@ pub fn Home(user: Signal<User>, set_user: WriteSignal<User>) -> impl IntoView {
     let logout = move || {
         local_storage().clear().expect("Can't access to local storage");
         set_user.set(User::default());
-        use_navigate()("/leptos_supabase_example/login", Default::default());
+        use_navigate()("/login", Default::default());
     };
     let retry_all_faileds = move || {
         spawn_local(async move {
@@ -341,7 +341,7 @@ pub fn Home(user: Signal<User>, set_user: WriteSignal<User>) -> impl IntoView {
                         RefreshTokenError::JsonParseError => {}
                         RefreshTokenError::RefreshTokenExpirationError => {
                             set_user.set(User::default());
-                            use_navigate()("/leptos_supabase_example/login", Default::default())
+                            use_navigate()("/login", Default::default())
                         }
                         RefreshTokenError::UnknownError => {}
                     },
