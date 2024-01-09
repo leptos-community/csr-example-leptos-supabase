@@ -24,7 +24,7 @@ pub fn App() -> impl IntoView {
         <Router>
             <Routes>
                 <Route
-                    path="/login"
+                    path="/leptos_supabase_example/login"
                     view=move || {
                         if user.get_untracked().access_token.is_empty() {
                             view! { <LogIn user=user set_user=set_user/> }
@@ -34,10 +34,10 @@ pub fn App() -> impl IntoView {
                     }
                 />
 
-                <Route path="/signup" view=SignUp/>
+                <Route path="/leptos_supabase_example/signup" view=SignUp/>
 
                 <Route
-                    path="/redirect"
+                    path="/leptos_supabase_example/redirect"
                     view=move || {
                         let new_user = url_hash_to_user(use_location().hash.get());
                         match new_user {
@@ -46,10 +46,10 @@ pub fn App() -> impl IntoView {
                                     local_storage().clear().expect("Can't access to local storage");
                                 }
                                 set_user.set(new_user);
-                                view! { <Redirect path="/"/> }
+                                view! { <Redirect path="/leptos_supabase_example"/> }
                             }
                             /// (Some(access_token), None) => _Never happens! This path is for login from google so both tokens always are provided
-                            _ => view! { <Redirect path="/login"/> },
+                            _ => view! { <Redirect path="/leptos_supabase_example/login"/> },
                         }
                     }
                 />
@@ -60,13 +60,13 @@ pub fn App() -> impl IntoView {
                         if user.get_untracked().access_token.is_empty().not() {
                             view! { <Home user=user set_user=set_user/> }
                         } else {
-                            view! { <Redirect path="/login"/> }
+                            view! { <Redirect path="/leptos_supabase_example/login"/> }
                         }
                     }
                 />
 
                 <Route
-                    path="signup/confirmation"
+                    path="/leptos_supabase_example/signup/confirmation"
                     view=move || {
                         view! {
                             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);font-size:22px;">
@@ -79,7 +79,7 @@ pub fn App() -> impl IntoView {
                 <Route
                     path="/*any"
                     view=move || {
-                        view! { <div style="margin:auto; font-size:18;">"Page Not Found :("</div> }
+                        view! { <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);font-size:22px;">"Page Not Found :("</div> }
                     }
                 />
 

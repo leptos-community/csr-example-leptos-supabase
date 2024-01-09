@@ -21,7 +21,7 @@ pub fn SignUp() -> impl IntoView {
         match res {
             Ok(res) => {
                 if res.status().is_success() {
-                    use_navigate()("/signup/confirmation", Default::default());
+                    use_navigate()("/leptos_supabase_example/signup/confirmation", Default::default());
                 } else {
                     toast(format!(
                         "Login Failed. Response message: {}",
@@ -72,7 +72,7 @@ pub fn SignUp() -> impl IntoView {
                     class="secondary-button"
                     value="LogIn"
                     on:click=move |_| {
-                        use_navigate()("/login", Default::default());
+                        use_navigate()("/leptos_supabase_example/login", Default::default());
                     }
                 />
 
