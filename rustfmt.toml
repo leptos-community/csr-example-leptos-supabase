@@ -1,5 +1,0 @@
-edition = "2021"
-use_small_heuristics="Max"
-hard_tabs=false
-max_width = 100
-tab_spaces=4
