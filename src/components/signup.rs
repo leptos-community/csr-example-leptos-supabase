@@ -21,7 +21,10 @@ pub fn SignUp() -> impl IntoView {
         match res {
             Ok(res) => {
                 if res.status().is_success() {
-                    use_navigate()("/signup/confirmation", Default::default());
+                    use_navigate()(
+                        "/leptos_supabase_example/signup/confirmation",
+                        Default::default(),
+                    );
                 } else {
                     toast(format!(
                         "Login Failed. Response message: {}",
@@ -58,7 +61,14 @@ pub fn SignUp() -> impl IntoView {
                 </label>
                 <label for="pass">
                     Password:
-                    <input node_ref=pass_ref type="password" name="pass" id="pass" required  minlength="6" />
+                    <input
+                        node_ref=pass_ref
+                        type="password"
+                        name="pass"
+                        id="pass"
+                        required
+                        minlength="6"
+                    />
                 </label>
                 <input
                     type="submit"
@@ -72,7 +82,7 @@ pub fn SignUp() -> impl IntoView {
                     class="secondary-button"
                     value="LogIn"
                     on:click=move |_| {
-                        use_navigate()("/login", Default::default());
+                        use_navigate()("/leptos_supabase_example/login", Default::default());
                     }
                 />
 
