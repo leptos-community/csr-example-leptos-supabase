@@ -60,7 +60,7 @@ jobs:
         run: ./trunk build --release --public-url "${GITHUB_REPOSITORY#*/}"
 
 
-      Deploy to gh-pages branch
+      # Deploy to gh-pages branch
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
