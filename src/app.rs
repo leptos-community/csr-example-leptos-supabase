@@ -22,7 +22,7 @@ pub fn App() -> impl IntoView {
     }));
     view! {
         <Router>
-            <Routes>
+            <Routes base="/leptos_supabase_example".to_string()>
                 <Route
                     path="/login"
                     view=move || {
