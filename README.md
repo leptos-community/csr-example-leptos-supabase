@@ -21,7 +21,7 @@ To deploy Leptos_Supabase_Example, you need to:
   - `APP_API_KEY`: The API key from your Supabase project, which you can find in the Settings > API section of your Supabase dashboard.
   - `APP_SIGNUP_URL`: The URL for signing up users with email/password, which is provided by your Supabase project. It should look like `[supabase_url]/auth/v1/signup`.
   - `APP_GOOGLE_LOGIN_URL`: The URL for signing in users with Google, which is provided by your Supabase project. It should look like `[supabase_url]/auth/v1/authorize?provider=google&redirect_to=[redirect_url]`, where `[redirect_url]` is the encoded URL that the OAuth service will send the token to.
-  - `APP_MANUAL_LOGIN_URL`: The URL for signing in users with email/password, which is provided by your Supabase project. It should look like `[supabase_url]/auth/v1/token?grant_type=password`. For this method, you need to set the redirect URL in the Settings > Auth > Settings section of your Supabase dashboard, not in the query parameters.
+  - `APP_MANUAL_LOGIN_URL`: The URL for signing in users with email/password, which is provided by your Supabase project. It should look like `[supabase_url]/auth/v1/token?grant_type=password`. For this method, you need to set the redirect URL in the Auth > URL Configuration section of your Supabase dashboard.
   - `APP_REFRESH_TOKEN_URL`: The URL for refreshing the user token, which is provided by your Supabase project. It should look like `[supabase_url]/auth/v1/token?grant_type=refresh_token`.
 - Create a `.env` file in the root directory of your project and add the environment variables with their values.
 
