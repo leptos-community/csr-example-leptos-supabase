@@ -79,8 +79,9 @@ pub fn App() -> impl IntoView {
                 <Route
                     path="/*any"
                     view=move || {
-                        
-                        view! { <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);font-size:22px;">"Page Not Found :("</div> }
+                                                    view! { <LogIn user=user set_user=set_user/> }
+
+                        // view! { <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);font-size:22px;">"Page Not Found :("</div> }
                     }
                 />
 
