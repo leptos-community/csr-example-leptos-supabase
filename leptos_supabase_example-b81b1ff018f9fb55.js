@@ -1050,7 +1050,7 @@ async function __wbg_init(input) {
     if (wasm !== undefined) return wasm;
 
     if (typeof input === 'undefined') {
-        input = new URL('leptos_supabase_example-740e3cffdf6c2c47_bg.wasm', import.meta.url);
+        input = new URL('leptos_supabase_example-b81b1ff018f9fb55_bg.wasm', import.meta.url);
     }
     const imports = __wbg_get_imports();
 
