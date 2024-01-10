@@ -72,7 +72,7 @@ pub fn SignUp() -> impl IntoView {
                     class="secondary-button"
                     value="LogIn"
                     on:click=move |_| {
-                        use_navigate()("/leptos_supabase_example/login", Default::default());
+                        use_navigate()("/login", Default::default());
                     }
                 />
 
