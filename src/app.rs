@@ -77,7 +77,7 @@ pub fn App() -> impl IntoView {
                 />
 
                 <Route
-                    path="/*any"
+                    path="/*"
                     view=move || {
                         view! {
                             // view! { <LogIn user=user set_user=set_user/> }
