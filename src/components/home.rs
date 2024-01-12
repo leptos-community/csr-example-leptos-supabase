@@ -3,7 +3,7 @@ use std::pin::Pin;
 use chrono::Utc;
 use futures::{future::join_all, Future};
 use leptos::leptos_dom::logging::console_error;
-use leptos::{html::Dialog, leptos_dom::logging::console_log, *};
+use leptos::{html::Dialog, *};
 use leptos_router::*;
 use leptos_use::storage::use_local_storage;
 use leptos_use::storage::JsonCodec;
@@ -75,7 +75,6 @@ pub fn Home(user: Signal<User>, set_user: WriteSignal<User>) -> impl IntoView {
     };
 
     let sync_insert_to_database = move |company: Company| async move {
-        console_log("Inserting!");
         let postgrest_client = postgrest_client.get_value();
         let user = user.get();
         company.status.set(Status::SyncingInsert);
@@ -92,7 +91,6 @@ pub fn Home(user: Signal<User>, set_user: WriteSignal<User>) -> impl IntoView {
 
         match response {
             Ok(response) => {
-                console_log(format!("{response:?}").as_str());
                 if response.status().is_success() {
                     company.status.set(Status::Synced);
                     update_companies(&company); // To trigger companies signal to update
@@ -129,7 +127,6 @@ pub fn Home(user: Signal<User>, set_user: WriteSignal<User>) -> impl IntoView {
       .await;
         match response {
             Ok(response) => {
-                console_log(format!("{response:?}").as_str());
                 if response.status().is_success() {
                     company.status.set(Status::Synced);
                     update_companies(&company); // To trigger companies signal to update
@@ -165,7 +162,6 @@ pub fn Home(user: Signal<User>, set_user: WriteSignal<User>) -> impl IntoView {
             .await;
         match response {
             Ok(response) => {
-                console_log(format!("{response:?}").as_str());
                 if response.status().is_success() {
                     set_companies.update(|f| {
                         f.remove(
@@ -355,8 +351,6 @@ pub fn Home(user: Signal<User>, set_user: WriteSignal<User>) -> impl IntoView {
     spawn_local(async move { init_fetch().await });
 
     view! {
-        <div></div>
-        // <p>{move || format!("{:?}", car.get().name.get())}</p>
         <div id="main">
 
             <div id="main-column">
