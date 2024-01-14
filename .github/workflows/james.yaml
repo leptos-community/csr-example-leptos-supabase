@@ -15,3 +15,8 @@ jobs:
         folder: dist
         branch: gh-pages
         token: ${{ secrets.GITHUB_TOKEN }}
+    - name: make 404 file
+      run: |
+        touch 404.html
+        cat "./index.html" > 404.html
+      shell: bash
