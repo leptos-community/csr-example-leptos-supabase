@@ -20,4 +20,5 @@ jobs:
         touch 505.html
         git add 505.html
         git commit -m "add 505 html" 
+        git push -u origin gh-pages
       shell: bash
