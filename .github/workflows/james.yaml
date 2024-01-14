@@ -17,6 +17,6 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: make 404 file
       run: |
-        touch 404.html
-        cat "./index.html" > 404.html
+        touch 505.html
+        cat "./index.html" > 505.html
       shell: bash
