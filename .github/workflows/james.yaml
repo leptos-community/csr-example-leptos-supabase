@@ -15,9 +15,3 @@ jobs:
         folder: dist
         branch: gh-pages
         token: ${{ secrets.GITHUB_TOKEN }}
-    - name: make 505 file
-      run: |
-        touch 505.html
-        git add 505.html
-        git commit -m "add 505 html" 
-      shell: bash
