@@ -16,9 +16,4 @@ jobs:
         branch: gh-pages
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: make 505 file
-      run: |
-        touch 505.html
-        git add 505.html
-        git commit -m "add 505 html" 
-        git push -u origin gh-pages
-      shell: bash
+      run: cp ./index.html ./505.html
