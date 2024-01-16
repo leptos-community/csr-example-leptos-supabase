@@ -19,6 +19,8 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: List files after deploy
       run: ls
+    - name: add arbitrary file
+      run: touch something.txt
     - name: make 505 file
       run: cp ./index.html ./505.html
       
