@@ -8,6 +8,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    - name: List files before deploy
+      run: ls
     - uses: actions/checkout@master
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
@@ -15,5 +17,8 @@ jobs:
         folder: dist
         branch: gh-pages
         token: ${{ secrets.GITHUB_TOKEN }}
+    - name: List files after deploy
+      run: ls
     - name: make 505 file
       run: cp ./index.html ./505.html
+      
