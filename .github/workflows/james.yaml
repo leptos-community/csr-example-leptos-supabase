@@ -19,8 +19,6 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: List files after deploy
       run: ls
-    - name: add arbitrary file
-      run: touch something.txt
     - name: make 505 file
       run: cp ./index.html ./505.html
     - name: Commit files
@@ -29,8 +27,8 @@ jobs:
         git config --local user.name "GitHub Action"
         git add .
         git commit -m "Add changes" -a
-        git push origin gh-pages
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
