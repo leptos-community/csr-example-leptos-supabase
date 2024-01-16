@@ -19,7 +19,7 @@ jobs:
       with:
         ref: gh-pages
     - name: Make 404.html file from index.html
-      run: cp ./index.html ./404.html --force
+      run: cp -f ./index.html ./404.html
     - name: Commit files
       run: |
         git config --local user.email ${{ github.event.sender.id }}+${{ github.event.sender.login }}@users.noreply.github.com
