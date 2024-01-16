@@ -8,8 +8,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: List files before deploy
-      run: ls
     - uses: actions/checkout@master
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
@@ -20,16 +18,14 @@ jobs:
     - uses: actions/checkout@master
       with:
         ref: gh-pages
-    - name: List files after deploy gh-pages branch
-      run: ls
-    - name: make 505 file
-      run: cp ./index.html ./505.html
+    - name: Make 404.html file from index.html
+      run: cp ./index.html ./404.html --force
     - name: Commit files
       run: |
         git config --local user.email ${{ github.event.sender.id }}+${{ github.event.sender.login }}@users.noreply.github.com
         git config --local user.name "GitHub Action"
-        git add .
-        git commit -m "Add changes" -a
+        git add ./404.html
+        git commit -m "Auto add 404.html" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
