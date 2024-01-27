@@ -2,4 +2,4 @@
 release = true
 dist = "dist"
 public_url = "/leptos_supabase_example/"
-# filehash = false
+filehash = false
