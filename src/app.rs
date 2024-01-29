@@ -12,6 +12,7 @@ use crate::core::models::User;
 
 #[component]
 pub fn App() -> impl IntoView {
+    
     let (user, set_user, _) = use_local_storage::<User, JsonCodec>("user");
     let show_toast = RwSignal::new(false);
     let toast_text = RwSignal::new(String::new());
