@@ -6,7 +6,7 @@ use leptos::leptos_dom::logging::console_error;
 use leptos::{html::Dialog, *};
 use leptos_router::*;
 use leptos_use::storage::use_local_storage;
-use leptos_use::storage::JsonCodec;
+use leptos_use::utils::JsonCodec;
 
 use postgrest::Postgrest;
 use serde_json::json;
@@ -188,7 +188,7 @@ pub fn Home(user: Signal<User>, set_user: WriteSignal<User>) -> impl IntoView {
     let logout = move || {
         local_storage().clear().expect("Can't access to local storage");
         set_user.set(User::default());
-        use_navigate()("/leptos_supabase_example/login", Default::default());
+        use_navigate()("/csr-example-leptos-supabase/login", Default::default());
     };
     let retry_all_faileds = move || {
         spawn_local(async move {
@@ -337,7 +337,7 @@ pub fn Home(user: Signal<User>, set_user: WriteSignal<User>) -> impl IntoView {
                         RefreshTokenError::JsonParseError => {}
                         RefreshTokenError::RefreshTokenExpirationError => {
                             set_user.set(User::default());
-                            use_navigate()("/leptos_supabase_example/login", Default::default())
+                            use_navigate()("/csr-example-leptos-supabase/login", Default::default())
                         }
                         RefreshTokenError::UnknownError => {}
                     },
@@ -350,6 +350,7 @@ pub fn Home(user: Signal<User>, set_user: WriteSignal<User>) -> impl IntoView {
 
     spawn_local(async move { init_fetch().await });
 
+    // let r = view! { <div/> };
     view! {
         <div id="main">
 
@@ -764,4 +765,3 @@ pub fn Home(user: Signal<User>, set_user: WriteSignal<User>) -> impl IntoView {
         </div>
     }
 }
-

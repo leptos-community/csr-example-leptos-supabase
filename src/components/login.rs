@@ -64,7 +64,7 @@ pub fn LogIn(user: Signal<User>, set_user: WriteSignal<User>) -> impl IntoView {
                                             .expect("Can't access to local storage");
                                     }
                                     set_user.set(User { access_token, refresh_token, uuid, email });
-                                    use_navigate()("/leptos_supabase_example/", Default::default());
+                                    use_navigate()("/csr-example-leptos-supabase/", Default::default());
                                 }
                                 _ => {
                                     toast(String::from("User token is not valid"));
@@ -121,7 +121,7 @@ pub fn LogIn(user: Signal<User>, set_user: WriteSignal<User>) -> impl IntoView {
                     class="secondary-button"
                     value="SignUp"
                     on:click=move |_| {
-                        use_navigate()("/leptos_supabase_example/signup", Default::default());
+                        use_navigate()("/csr-example-leptos-supabase/signup", Default::default());
                     }
                 />
 

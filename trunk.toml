@@ -1,5 +1,5 @@
 [build]
 release = true
 dist = "dist"
-public_url = "/leptos_supabase_example/"
+public_url = "/csr-example-leptos-supabase/"
 filehash = false

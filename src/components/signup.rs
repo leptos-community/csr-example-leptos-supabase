@@ -22,7 +22,7 @@ pub fn SignUp() -> impl IntoView {
             Ok(res) => {
                 if res.status().is_success() {
                     use_navigate()(
-                        "/leptos_supabase_example/signup/confirmation",
+                        "/csr-example-leptos-supabase/signup/confirmation",
                         Default::default(),
                     );
                 } else {
@@ -82,7 +82,7 @@ pub fn SignUp() -> impl IntoView {
                     class="secondary-button"
                     value="LogIn"
                     on:click=move |_| {
-                        use_navigate()("/leptos_supabase_example/login", Default::default());
+                        use_navigate()("/csr-example-leptos-supabase/login", Default::default());
                     }
                 />
 
