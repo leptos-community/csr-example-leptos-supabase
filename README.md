@@ -3,7 +3,7 @@
 This is a web application that uses the Leptos framework as the client and Supabase as the backend service. It demonstrates how to implement authentication with Google and email/password using Supabase.
 
 You can check out the demo site which is public for a limited time:
-https://mahdi739.github.io/csr-example-leptos-supabase/
+https://leptos-community.github.io/csr-example-leptos-supabase/
 
 ## Features
 
